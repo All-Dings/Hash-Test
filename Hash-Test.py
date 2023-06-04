@@ -93,7 +93,7 @@ def Hash_Functions_Test():
 	print(f"{Hdr_Hash_Function_Name:<13} | {Hdr_Delta_Sum_Us:>10} | {Hdr_MiB_Per_Second:>5} | {Hdr_Hash}")
 	print("--------------------------------------------------------------------------------------------------------")
 	for Hash_Function in Hash_Function_List:
-		Heading_List.append(Hash_Function.__name__.replace("openssl", "").lower())
+		Heading_List.append(Hash_Function.__name__.replace("openssl_", "").lower())
 		Result_List_Ms.append(str(Runtime_Test(Hash_Function, Data)))
 
 	print("--------------------------------------------------------------------------------------------------------")
