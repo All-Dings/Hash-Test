@@ -11,7 +11,7 @@ import Dings_Lib_C
 # Data-Size: 32 * 16 MiB = 512 MiB
 
 LOOP_COUNT = 32
-BUFFER_SIZE = Bm.Byte(1024 * 1024 * 16)
+BUFFER_SIZE = Bm.MiB(16)
 
 # Run Test for one Hasn-Function
 def Runtime_Test(Hash_Function, Data):
