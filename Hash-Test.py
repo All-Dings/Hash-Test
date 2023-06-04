@@ -28,9 +28,12 @@ def Runtime_Test(Hash_Function, Data):
 	Delta_Sum_Us = Delta_Sum.seconds * 1000000 + Delta_Sum.microseconds
 	MiB_Per_Second = int((Data_Size_MiB * LOOP_COUNT) / (Delta_Sum_Us / 1000000))
 	if Hash_Function_Name == "ssl_shake_128" or Hash_Function_Name == "ssl_shake_256":
-		print(f"{Hash_Function_Name:<13} | {Delta_Sum_Us:>10} | {MiB_Per_Second:>5} | {Hash.hexdigest(32)}")
+		Hash_Digest = Hash.hexdigest(32)
 	else:
-		print(f"{Hash_Function_Name:<13} | {Delta_Sum_Us:>10} | {MiB_Per_Second:>5} | {Hash.hexdigest()}")
+		Hash_Digest = Hash.hexdigest()
+	if len(Hash_Digest) > 64:
+		Hash_Digest = Hash_Digest[:64] + "..."
+	print(f"{Hash_Function_Name:<13} | {Delta_Sum_Us:>10} | {MiB_Per_Second:>5} | {Hash_Digest}")
 	return MiB_Per_Second
 
 # Check-Sum Base-Class
@@ -94,7 +97,7 @@ def Hash_Functions_Test():
 		Result_List_Ms.append(str(Runtime_Test(Hash_Function, Data)))
 
 	print("--------------------------------------------------------------------------------------------------------")
-	print("CSV for Analyis:")
+	print("CSV for Analyis")
 	print("--------------------------------------------------------------------------------------------------------")
 	print(";".join(Heading_List))
 	print(";".join(Result_List_Ms))
