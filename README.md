@@ -20,8 +20,8 @@ $ docker build . -t hash-test
 $ docker run -ti --rm -h My-Computer-U22.04 hash-test bash
 ```
 ```bash
-root@My-Computer-U22:~# make install
-root@My-Computer-U22:~# make
+root@My-Computer-U22.04:~# make install
+root@My-Computer-U22.04:~# make
 ```
 ```
 Function      |         us | MiB/s | Hash
@@ -46,7 +46,7 @@ blake2s       |     979613 |   522 | 4c62e37afbb2b0230edb92a94772f10da8ba45b7845
 CSV for Analyis
 --------------------------------------------------------------------------------------------------------
 Computer;add_c;add_py;_md5;_sha1;_sha224;_sha256;_sha384;_sha512;_sha3_224;_sha3_256;_sha3_384;_sha3_512;_shake_128;_shake_256;blake2b;blake2s
-My-Computer-U22;1746;9;488;2242;2269;2267;1331;1329;642;608;465;324;746;608;867;522
+My-Computer-U22.04;1746;9;488;2242;2269;2267;1331;1329;642;608;465;324;746;608;867;522
 ```
 
 ## Current Results
