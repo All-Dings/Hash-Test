@@ -41,7 +41,7 @@ class Csum_Class:
 	def hexdigest(Self, Max_Byte = 0):
 		Hex_String = hex(Self.Hash_Value)
 		if Max_Byte == 0:
-			return Hex_String
+			return Hex_String[2:]
 		else:
 			return Hex_String[2:Max_Byte * 2]
 
